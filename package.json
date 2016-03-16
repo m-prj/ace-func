@@ -1,22 +1,17 @@
 {
   "name": "ace-func",
-  "version": "0.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "<pre>\r ファイル拡張子に応じてAceエディタの挙動を変えれるようにしたモジュールです。\r </pre>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"test\""
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:m-prj/ace-func"
-  },
-  "keywords": [
-    "ace"
-  ],
-  "author": "Misaki Shibata",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/m-prj/ace-func/issues"
-  },
-  "homepage": "https://github.com/m-prj/ace-func"
+  "author": "",
+  "license": "ISC",
+  "readme": "# ace-func\r\n\r\n<pre>\r\nファイル拡張子に応じてAceエディタの挙動を変えれるようにしたモジュールです。\r\n</pre>",
+  "readmeFilename": "README.md",
+  "_id": "ace-func@1.0.0",
+  "_shasum": "d458dcfa2cbd576b61ac51fa1fb2ec00ccb51194",
+  "_from": "submodules\\ace-func",
+  "_resolved": "file:submodules\\ace-func"
 }
