@@ -19,7 +19,7 @@
   (function () {
     var editor;
     var text = $('#editor').text();
-    // console.log(text);
+    console.log(text);
     var session = new ace.createEditSession(text, 'ace/mode/<%= language %>');
     // session.setMode('ace/mode/<%= language %>');
     editor = ace.edit("editor");
@@ -52,7 +52,7 @@
     });
     editor.setShowInvisibles(true);
     editor.setTheme("ace/theme/monokai");
-    // editor.setTheme("ace/theme/chrome");
+    //editor.setTheme("ace/theme/chrome");
     // editor.getSession().setMode('ace/mode/<%= language %>');
 
     //   editor.getSession().setAnnotations([{
