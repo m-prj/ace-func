@@ -14,7 +14,7 @@ module.exports = new(function() {
         // ファイルパス取得
         console.log(filePath);
         
-        // 拡張子と言語の割り当て
+        
         var ext_map ={
             ".html": "html",
             ".js": "javascript",
@@ -24,17 +24,14 @@ module.exports = new(function() {
             ".lua": "lua",
             ".php": "php",
             ".json": "json",
-            ".xquery": "xquery",
-            ".sql": "sql"
+            ".xquery": "xquery"
         };
-        // console.log(__dirname + '/editor.html');
+        console.log(__dirname + '/editor.html');
         var editor_tpl = fs.readFileSync(__dirname + '/editor.html', 'utf-8');
         
         // var loadPath = '/Users/mac/Documents/vhosts/electron-asazuke/dist/bridge.js';
         // var loadPath = '/Users/mac/Documents/vhosts/electron-asazuke/package.json';
-        var ext = path.extname(filePath);
-        // var axt = filePath.split('.');
-        // var ext = axt[axt.length - 1];
+        var ext = path.extname(filePath)
         // console.log('ext', ext_map[ext]);
         var target_txt = fs.readFileSync(filePath, 'utf-8');
         // console.log(target_txt);
@@ -44,8 +41,8 @@ module.exports = new(function() {
         
         
         if($('.header-menu .item').index($('.active')) == 3){
-            // console.log("ace-func.js WEBスクレイピング");
-            $('#div_C .layer-panel.is-current .above_panel').empty().append(compiled(valiable));
+            console.log("ace-func.js WEBスクレイピング");
+            $('#div_C .layer-panel.is-current .above_panel').html(compiled(valiable));
             
             var sv_url = 'http://' + global.confJson.buildInServerIp 
             + ':' + global.confJson.buildInServerPort 
@@ -53,7 +50,7 @@ module.exports = new(function() {
             $('#div_C .layer-panel.is-current .scraping_preview').attr('src',sv_url);
             $('#editor').css({'height':'50%'});
         }else{
-            $("#div_C .layer-panel.is-current").empty().append(compiled(valiable));
+            $("#div_C .layer-panel.is-current").html(compiled(valiable));
         }
         
         $('.ace-filepath').text(filePath);
@@ -63,7 +60,7 @@ module.exports = new(function() {
         fs.writeFile(fullPath, editData, function(err){
         if (err) throw err;
         if($('.header-menu .item').index($('.active')) == 3){
-            // console.log("ace-func.js WEBスクレイピング ≒ reload()");
+            console.log("ace-func.js WEBスクレイピング ≒ reload()");
             var sv_url = 'http://' + global.confJson.buildInServerIp + ':' 
             + global.confJson.buildInServerPort 
             + fullPath.replace(global.appJson.asazuke+'/src/data/'+global.appJson.select_project+'/SampleSite', '');
@@ -74,12 +71,6 @@ module.exports = new(function() {
         
         });
     }
-    
-    this.execFile = function(fullPath, editData){
-        fs.writeFile(fullPath, editData, function(err){
-          if (err) throw err;
-          SHELL.execFile(fullPath);
-        });
-    }
 })();
+
 
